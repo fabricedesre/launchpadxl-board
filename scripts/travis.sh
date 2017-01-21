@@ -27,5 +27,3 @@ for example_file in examples/*.rs; do
         ./build.sh --example ${example} --release
     fi
 done
-
-cd numeric_utils && cargo test
