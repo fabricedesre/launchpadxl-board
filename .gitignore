@@ -1,0 +1,6 @@
+target
+openocd.log
+firmware.map
+Cargo.lock
+*.bk
+examples/config.rs

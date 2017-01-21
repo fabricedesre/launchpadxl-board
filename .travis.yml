@@ -1,0 +1,28 @@
+# We install rust ourselves because travis doesn't use rustup yet and that
+# prevents installation of the rust-src component.
+
+sudo: true
+
+os:
+  - linux
+
+dist: trusty
+
+cache:
+  - apt
+
+addons:
+    apt:
+      sources:
+        - sourceline: 'deb http://archive.ubuntu.com/ubuntu rusty universe'
+
+before_script:
+  - sudo add-apt-repository -y ppa:terry.guo/gcc-arm-embedded
+  - sudo dpkg --add-architecture i386
+  - sudo apt-get update -qq || true
+  - sudo apt-get install -y gcc-multilib
+  - sudo apt-get install -y --force-yes gcc-arm-none-eabi
+  - arm-none-eabi-gcc --version
+
+script:
+  - ./scripts/travis.sh

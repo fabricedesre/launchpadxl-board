@@ -1,0 +1,10 @@
+[package]
+name = "launchpadxl_board"
+version = "0.1.0"
+authors = ["Fabrice Desré <fabrice@desre.org>"]
+
+[dependencies]
+cc3200 = { path = "cc3200-rs" }
+freertos_alloc = { path = "cc3200-rs/freertos_alloc" }
+freertos_rs = "0.1"
+log = { version = "0.3", default-features = false }
